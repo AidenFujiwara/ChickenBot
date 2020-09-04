@@ -1,7 +1,6 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const TOKEN = 'NzA5OTcyMDYwNDk5MjE0MzY3.XrtrUg.xRlVu57BhE40D9-9wqiGIfeT1_4';
 
 const fs = require('fs');
 
@@ -38,7 +37,7 @@ for(const file of reactionsEqualsFiles){
     client.reactionsEquals.set(reactionsEquals.trigger, reactionsEquals);
 }
 
-bot.login(TOKEN);
+bot.login(process.env.envTOKEN);
 
 bot.on('ready', () => {
     console.log(`Logged in as Chicken Bot!`);
