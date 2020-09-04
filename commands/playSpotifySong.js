@@ -13,7 +13,7 @@ module.exports = {
         var bandName = spotifyActivity[0].state;
         var opts = {
             maxResults: 1,
-            key: 'AIzaSyChMb-ZtEkYZd9x9pzC06Qsd2GoZUJkHaU'
+            key: process.env.youtubeV3APIKey
         };
         search(`${songName} by ${bandName}`, opts, async function(err, results) {
             if(err){
