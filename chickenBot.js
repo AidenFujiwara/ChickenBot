@@ -62,7 +62,7 @@ bot.on('message', msg => {
     }
     else{
         client.reactionsStartsWith.forEach((reactionsStartsWith, reactionsStartsWithTrigger) => {
-            if(msg.content.toLowerCase().startsWith(reactionsStartsWithTrigger)){
+            if(msg.content.startsWith(reactionsStartsWithTrigger)){
                 try{
                     client.reactionsStartsWith.get(reactionsStartsWithTrigger).execute(msg, args);
                 }   catch (error){
@@ -72,7 +72,7 @@ bot.on('message', msg => {
             }
         });
         client.reactionsIncludes.forEach((reactionsIncludes, reactionsIncludesTrigger) =>{
-            if(msg.content.toLowerCase().includes(reactionsIncludesTrigger)){
+            if(msg.content.includes(reactionsIncludesTrigger)){
                 try{
                     client.reactionsIncludes.get(reactionsIncludesTrigger).execute(msg, args);
                 }   catch (error){
@@ -82,7 +82,7 @@ bot.on('message', msg => {
             }
         });
         client.reactionsEquals.forEach((reactionsEquals, reactionsEqualsTrigger) =>{
-            if(msg.content.toLowerCase() === reactionsEqualsTrigger){
+            if(msg.content === reactionsEqualsTrigger){
                 try{
                     client.reactionsEquals.get(reactionsEqualsTrigger).execute(msg, args);
                 }   catch (error){
