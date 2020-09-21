@@ -1,2 +1,2 @@
 # ChickenBot
-Discord bot made with discord.js
+Fun Discord bot made with discord.js
