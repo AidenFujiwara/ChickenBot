@@ -57,7 +57,6 @@ bot.on('message', msg => {
             client.commands.get(command).execute(msg, args);
         }   catch (error) {
             console.error(error);
-            msg.reply('there was an error trying to execute that command!');
         }
     }
     else{
@@ -67,7 +66,6 @@ bot.on('message', msg => {
                     client.reactionsStartsWith.get(reactionsStartsWithTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
-                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
@@ -77,7 +75,6 @@ bot.on('message', msg => {
                     client.reactionsIncludes.get(reactionsIncludesTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
-                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
@@ -87,34 +84,8 @@ bot.on('message', msg => {
                     client.reactionsEquals.get(reactionsEqualsTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
-                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
     }
 });
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
-    let newUserChannel = newMember.channel;
-    let oldUserChannel = oldMember.channel;
-
-    //console.log(`${newMember.member.user.username} has joined ${newUserChannel.name} id: ${newUserChannel.id}`);
-    //console.log(oldUserChannel);
-
-    //whenever someone joins a voice call
-    /*if(oldUserChannel === null && newUserChannel !== null){
-        //specifc users
-        if(newMember.member.id === BluedawwnID || newMember.member.id === NighthiraethID){
-            newUserChannel.join().then(connection => {
-                const stream = ytdl('https://www.youtube.com/watch?v=KA_ldfvVyX8', { filter: 'audioonly' });
-                const dispatcher = connection.play(stream);
-            });
-        }
-    }
-    else if((oldUserChannel !== newUserChannel) && (newUserChannel !== null) && (newMember.member.id === BluedawwnID || newMember.member.id === NighthiraethID) ){
-        newUserChannel.join();
-    }
-    else if((oldUserChannel !== null) && (newUserChannel === null) && (newMember.member.id === BluedawwnID || newMember.member.id === NighthiraethID)){
-        oldUserChannel.leave();
-    }*/
-});
-		
