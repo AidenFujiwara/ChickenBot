@@ -57,6 +57,7 @@ bot.on('message', msg => {
             client.commands.get(command).execute(msg, args);
         }   catch (error) {
             console.error(error);
+            msg.reply('That is not a valid command');
         }
     }
     else{
@@ -66,6 +67,7 @@ bot.on('message', msg => {
                     client.reactionsStartsWith.get(reactionsStartsWithTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
+                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
@@ -75,6 +77,7 @@ bot.on('message', msg => {
                     client.reactionsIncludes.get(reactionsIncludesTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
+                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
@@ -84,6 +87,7 @@ bot.on('message', msg => {
                     client.reactionsEquals.get(reactionsEqualsTrigger).execute(msg, args);
                 }   catch (error){
                     console.error(error);
+                    msg.reply('there was an error trying to execute that command!');
                 }
             }
         });
