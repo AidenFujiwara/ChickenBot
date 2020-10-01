@@ -1,5 +1,6 @@
 # ChickenBot
 Fun Discord bot made with discord.js
+
 Functionality:
 + Identify trigger words in user sent messages (ignores other bots)
 + Send text messages
