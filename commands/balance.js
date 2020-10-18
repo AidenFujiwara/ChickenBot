@@ -29,16 +29,16 @@ module.exports = {
             SQLClient.query(queryGetBalance, valuesGetBalance)
             .then(res => {
                 msg.channel.send(`<@${userID}> has ${res.rows[0].balance}`);
+                SQLClient.end();
             })
             .catch(e => {
                 console.log(e);
+                SQLClient.end();
             })
         })
         .catch(e => {
             console.log(e.stack);
-        })
-        .finally(() =>{
             SQLClient.end();
-        }) 
+        })
     },
 }
