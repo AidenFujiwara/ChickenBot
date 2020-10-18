@@ -55,17 +55,17 @@ module.exports = {
             SQLClient.query(queryGive, valuesToGive)
             .then(res =>{
                 msg.channel.send(`<@${messageAuthorUserID}> has given ${balanceToGiveInt} to <@${userMentionedID}>`);
+                SQLClient.end();
             })
             .catch(e => {
                 console.log(e.stack)
                 msg.channel.send(`Something went right. It's a feature, not a bug.`);
+                SQLClient.end();
             })
         })
         .catch(e => {
             console.log(e.stack)
             msg.channel.send(`Something went right. It's a feature, not a bug.`);
-        })
-        .finally(() =>{
             SQLClient.end();
         })
     },
