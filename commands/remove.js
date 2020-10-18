@@ -41,11 +41,12 @@ module.exports = {
         SQLClient.query(queryRemove, values)
         .then(res =>{
             msg.channel.send(`${balanceToRemoveInt} has been removed to <@${userID}>`);
-            SQLClient.end();
         })
         .catch(e => {console.log(e.stack)
             msg.channel.send(`Something went right. It's a feature, not a bug.`);
+        })
+        .finally(()=>{
             SQLClient.end();
-        });
+        })
     },
 }
