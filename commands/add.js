@@ -22,7 +22,7 @@ module.exports = {
             return;
         }
         const SQLClient = new Client({
-            connectionString: 'postgres://wyllaangmnljqg:11b121a9870d5015da97041337a5d79fb276c96dc52545b153fb2ec40b945e6d@ec2-3-208-50-226.compute-1.amazonaws.com:5432/d98sn7du51h3gh',
+            connectionString: process.env.DATABASE_URL,
             ssl: {
                 rejectUnauthorized: false
             }
