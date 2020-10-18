@@ -40,12 +40,13 @@ module.exports = {
         SQLClient.query(queryAdd, values)
         .then(res =>{
             msg.channel.send(`${balanceToAddInt} has been added to <@${userID}>`);
-            SQLClient.end();
         })
         .catch(e => {
             console.log(e.stack)
             msg.channel.send(`Something went right. It's a feature, not a bug.`);
-            SQLClient.end();
         })
+	.finally(() =>{
+            SQLClient.end();
+        })  
     },
 }
