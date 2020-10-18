@@ -27,7 +27,7 @@ module.exports = {
             return;
         }
         const SQLClient = new Client({
-            connectionString: provess.env.DATABASE_URL,
+            connectionString: process.env.DATABASE_URL,
             ssl: {
                 rejectUnauthorized: false
             }
