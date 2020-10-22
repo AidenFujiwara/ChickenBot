@@ -3,7 +3,12 @@ module.exports = {
 	name: 'avatar',
 	description: "Sends a picture of the mentioned user's avatar",
 	execute(msg, args) {
-        var person = msg.mentions.users.first();
+        if(msg.mentions.users.first()){
+            person = msg.mentions.users.first();
+        }
+        else{
+            person = msg.author;
+        }
         if(person){
             const avatarEmbed = new Discord.MessageEmbed()
                 .setColor('#FFFF00')
