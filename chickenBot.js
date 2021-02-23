@@ -57,7 +57,7 @@ bot.on('message', msg => {
             client.commands.get(command).execute(msg, args);
         }   catch (error) {
             console.error(error);
-            msg.reply('That is not a valid command');
+            //msg.reply('That is not a valid command');
         }
     }
     else{
