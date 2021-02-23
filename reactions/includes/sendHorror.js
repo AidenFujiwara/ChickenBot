@@ -18,17 +18,17 @@ module.exports = {
                 .setColor('#FFFF00')
                 .setImage('https://i.imgur.com/CqHHStl.png');
 
-            msg.reply('https://i.imgur.com/Dp1agFS.png')
+            msg.channel.send('https://i.imgur.com/Dp1agFS.png')
                 .then(msg => {
                 msg.delete( {timeout: 5000} )
             })
 
-            msg.reply('https://i.imgur.com/LiL4ND0.png')
+            msg.channel.send('https://i.imgur.com/LiL4ND0.png')
                 .then(msg => {
                 msg.delete( {timeout: 5000} )
             })
 
-            msg.reply('https://i.imgur.com/CqHHStl.png')
+            msg.channel.send('https://i.imgur.com/CqHHStl.png')
                 .then(msg => {
                 msg.delete( {timeout: 5000} )
             })
